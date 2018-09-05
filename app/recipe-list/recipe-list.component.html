@@ -1,0 +1,10 @@
+<h2>レシピ検索システム</h2>
+ 
+<ul>
+  <li *ngFor="let recipe of recipedata">
+ <!--     <a routerLink="/recipe-data/"[queryParams]='{recipe.id}'>{{recipe.name}}</a>  -->    
+  <!--      <a href="/recipe-data/{{recipe.id}}">{{recipe.name}}</a>   -->
+  <!-- {{recipe.name}}  --> 
+  <a href="/recipe-data/{{recipe.id}}">{{recipe.name}}</a> 
+  </li>
+</ul>
