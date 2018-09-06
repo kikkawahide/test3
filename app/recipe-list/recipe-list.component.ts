@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RECIPEDATA } from '../recipe/recipedata';
+import { Recipe } from '../recipe/recipe';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,11 +8,12 @@ import { RECIPEDATA } from '../recipe/recipedata';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  recipedata=RECIPEDATA;
-
-  constructor() { }
+  recipedata:Recipe[];
+  
+  constructor(private rsv: RecipeService) { }
 
   ngOnInit() {
+    this.recipedata=this.rsv.getRecipedata();
   }
 
 }

@@ -1,10 +1,20 @@
 <h2>レシピ検索システム</h2>
+<table>
+  <tr>
+    <th>名前</th><th>所要時間</th><th>ひとこと</th><th>主な材料</th>
+   
+  </tr>
+  <tr *ngFor="let recipe of recipedata">
+  <td>
+    <a routerLink="/recipe-data/{{recipe.id}}">{{recipe.name}}</a>
+  </td>
+  <td>{{recipe.minute}}</td>
+  <td>{{recipe.feature}}</td>
+  <td>
+    <span *ngFor="let item of recipe.ingre; let i=index">
+      <ng-container *ngIf="i<3">{{item.name}}&nbsp;</ng-container>
+    </span>
+  </td>
+  </tr>
+</table>
  
-<ul>
-  <li *ngFor="let recipe of recipedata">
- <!--     <a routerLink="/recipe-data/"[queryParams]='{recipe.id}'>{{recipe.name}}</a>  -->    
-  <!--      <a href="/recipe-data/{{recipe.id}}">{{recipe.name}}</a>   -->
-  <!-- {{recipe.name}}  --> 
-  <a href="/recipe-data/{{recipe.id}}">{{recipe.name}}</a> 
-  </li>
-</ul>
